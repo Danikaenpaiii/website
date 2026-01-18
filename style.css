@@ -1,0 +1,323 @@
+/* Retro Portfolio Stylesheet */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color Palette */
+:root {
+    --cream: #FFF8DC;
+    --beige: #F5E6D3;
+    --tan: #D4A574;
+    --dark-brown: #5D4037;
+    --accent: #C67C4E;
+    --border: #8D6E63;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: var(--cream);
+    color: var(--dark-brown);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--beige);
+    border-bottom: 3px solid var(--dark-brown);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--dark-brown);
+    border: 2px solid var(--dark-brown);
+    padding: 0.5rem 1rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-brown);
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--beige);
+    padding: 6rem 2rem;
+    text-align: center;
+    border-bottom: 3px dashed var(--dark-brown);
+    margin-bottom: 3rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--dark-brown);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+/* Sections */
+.section {
+    padding: 4rem 2rem;
+    border-top: 3px solid var(--dark-brown);
+    border-bottom: 3px solid var(--dark-brown);
+    margin-bottom: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--dark-brown);
+    border-left: 5px solid var(--accent);
+    padding-left: 1rem;
+}
+
+.section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+/* Work Section */
+.work-section {
+    background-color: var(--beige);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: var(--cream);
+    border: 3px solid var(--dark-brown);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 5px 5px 0 rgba(93, 64, 55, 0.3);
+}
+
+.project-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px 0 rgba(93, 64, 55, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--dark-brown);
+}
+
+.project-card p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    background-color: var(--beige);
+}
+
+.contact-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.contact-btn {
+    background-color: var(--tan);
+    color: var(--cream);
+    padding: 0.75rem 2rem;
+    border: 3px solid var(--dark-brown);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.contact-btn:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 0 var(--dark-brown);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-brown);
+    color: var(--cream);
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--accent);
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(93, 64, 55, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: var(--cream);
+    padding: 2rem;
+    border: 3px solid var(--dark-brown);
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.3s ease;
+    position: relative;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.modal-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.modal-description {
+    font-size: 1.1rem;
+    color: var(--dark-brown);
+    margin-bottom: 1.5rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark-brown);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+}
