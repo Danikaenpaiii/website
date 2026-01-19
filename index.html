@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page Navigation (Top Left) -->
+    <div class="page-nav">
+        <button class="page-btn active" data-page="intro" style="background-color: var(--light-green); border-color: var(--green); color: #fff;">1</button>
+        <button class="page-btn" data-page="about" style="background-color: var(--beige); border-color: var(--dark-brown); color: var(--dark-brown);">2</button>
+        <button class="page-btn" data-page="work" style="background-color: var(--light-blue); border-color: var(--blue); color: #fff;">3</button>
+        <button class="page-btn" data-page="contact" style="background-color: #d0d0d0; border-color: var(--dark-brown); color: var(--dark-brown);">4</button>
+    </div>
+
+    <!-- Page Container -->
+    <div class="pages-container">
+        
+        <!-- Page 1: Intro (Green & Black) -->
+        <div id="intro" class="page active">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h1 class="intro-greeting">hey I'm</h1>
+                    <h2 class="intro-name">Dan</h2>
+                </div>
+                <p class="intro-subtitle">Web Developer & Designer</p>
+            </div>
+        </div>
+
+        <!-- Page 2: About (Beige) -->
+        <div id="about" class="page">
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="logo">ABOUT</div>
+                </div>
+            </nav>
+            <section class="section about-page">
+                <div class="container">
+                    <h2>ABOUT ME</h2>
+                    <p>Hey! I'm Dan, I work with Python, Javascript, web dev and design, also C++ and C aren't out of my league! I'm based in Romania in the Satu Mare region.</p>
+                    <p>I'm passionate about creating beautiful, functional digital experiences. From backend development to frontend design, I bring ideas to life with clean, efficient code.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page 3: Work (Blue) -->
+        <div id="work" class="page">
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="logo">WORK</div>
+                </div>
+            </nav>
+            <section class="section work-page">
+                <div class="container">
+                    <h2>MY WORK</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <img src="screen.png" alt="Project One" class="project-image">
+                            <h3>Project One</h3>
+                            <p>Youtube media player for music and videos</p>
+                        </div>
+                        <div class="project-card">
+                            <img src="val.png" alt="Project Two" class="project-image">
+                            <h3>Project Two</h3>
+                            <p>valorant api to get crucial info about the team</p>
+                        </div>
+                        <div class="project-card">
+                            <img src="x.png" alt="Project Three" class="project-image">
+                            <h3>Project Three</h3>
+                            <p>still yet to come!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Page 4: Contact (Custom) -->
+        <div id="contact" class="page">
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="logo">CONTACT</div>
+                </div>
+            </nav>
+            <section class="section contact-page">
+                <div class="container">
+                    <h2>GET IN TOUCH</h2>
+                    <p>Feel free to reach out for collaborations or inquiries</p>
+                    <div class="contact-links">
+                        <a href="mailto:rambuuze@gmail.com" class="contact-btn">EMAIL ME</a>
+                        <a href="https://www.tiktok.com/@rambuuze5" class="contact-btn">TikTok</a>
+                        <a href="https://www.instagram.com/dandoesntlikeyou__/" class="contact-btn">Instagram</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <!-- Modal for project details -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-description" id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script src="stuff.js"></script>
+</body>
+</html>
