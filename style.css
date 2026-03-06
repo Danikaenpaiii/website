@@ -22,10 +22,10 @@
 
 body {
     font-family: 'Courier New', monospace;
-    background-color: var(--cream);
+    background-color: var(--beige);
     color: var(--dark-brown);
     line-height: 1.6;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Page Navigation (Top Left) */
@@ -63,43 +63,57 @@ body {
 /* Pages Container */
 .pages-container {
     width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
 }
 
 .page {
     width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.6s ease;
-    overflow-y: auto;
-    pointer-events: none;
+    min-height: 100vh;
 }
 
-.page.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    z-index: 10;
-}
 
-/* Page 1: Intro (Green & Black) */
+
+/* Page 1: Intro & About */
 #intro {
-    background: linear-gradient(135deg, var(--green) 0%, #1a3009 100%);
+    background: var(--beige);
+}
+
+.intro-section {
+    background: var(--beige);
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    display: flex;
 }
 
 .intro-content {
     text-align: center;
-    color: #fff;
+    color: var(--dark-brown);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-text {
+    max-width: 400px;
+    text-align: left;
+}
+
+.profile-frame {
+    border: 5px solid var(--dark-brown);
+    padding: 10px;
+    background-color: var(--cream);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
 }
 
 .intro-text {
@@ -118,18 +132,29 @@ body {
     font-size: 5rem;
     font-weight: bold;
     letter-spacing: 3px;
-    color: var(--light-green);
+    color: var(--dark-brown);
     animation: slideInRight 1s ease forwards;
     animation-delay: 0.3s;
     opacity: 0;
 }
 
-.intro-subtitle {
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 0.6s;
-    opacity: 0;
+.about-text {
+    max-width: 400px;
+    text-align: left;
+}
+
+.profile-frame {
+    border: 5px solid var(--dark-brown);
+    padding: 10px;
+    background-color: var(--cream);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
 }
 
 @keyframes fadeInUp {
@@ -154,27 +179,32 @@ body {
     }
 }
 
-/* Page 2: About (Beige) */
-#about {
-    flex-direction: column;
-    background-color: var(--cream);
-    display: flex;
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
 }
 
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Page 2: About (Beige) */
 .about-page {
     background-color: var(--beige) !important;
     border: none !important;
 }
 
-/* Page 3: Work (Blue) */
+/* Page 2: Work (Beige) */
 #work {
     flex-direction: column;
-    background-color: #e8f0ff;
+    background-color: var(--beige);
     display: flex;
 }
 
 .work-page {
-    background-color: #b3d9ff !important;
+    background-color: var(--beige) !important;
     border: none !important;
 }
 
@@ -192,15 +222,15 @@ body {
     border-left: 5px solid var(--light-blue);
 }
 
-/* Page 4: Contact */
+/* Page 3: Contact */
 #contact {
     flex-direction: column;
-    background-color: #f0f0f0;
+    background-color: var(--beige);
     display: flex;
 }
 
 .contact-page {
-    background-color: #e0e0e0 !important;
+    background-color: var(--beige) !important;
     border: none !important;
 }
 

@@ -1,20 +1,22 @@
 // Retro Portfolio JavaScript
 
-// Page Navigation
-const pageButtons = document.querySelectorAll('.page-btn');
-const pages = document.querySelectorAll('.page');
+// Scroll-triggered animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
 
-pageButtons.forEach((btn, index) => {
-    btn.addEventListener('click', function() {
-        // Remove active class from all buttons and pages
-        pageButtons.forEach(b => b.classList.remove('active'));
-        pages.forEach(p => p.classList.remove('active'));
-        
-        // Add active class to clicked button and corresponding page
-        btn.classList.add('active');
-        const pageId = btn.getAttribute('data-page');
-        document.getElementById(pageId).classList.add('active');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
     });
+}, observerOptions);
+
+// Observe all fade-in elements
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
 });
 
 // Project modal functionality
